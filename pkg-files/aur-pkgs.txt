@@ -18,4 +18,6 @@ kitty
 brave-bin
 nitrogen
 arandr
-sddm
+vscodium-bin
+github-desktop-bin
+nautilus-dropbox

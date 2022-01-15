@@ -44,6 +44,12 @@ echo -e "All set!"
 
 echo -ne "
 -------------------------------------------------------------------------
+                    Enabling Login Display Manager
+-------------------------------------------------------------------------
+"
+systemctl enable sddm.service
+echo -ne "
+-------------------------------------------------------------------------
                     Cleaning 
 -------------------------------------------------------------------------
 "
@@ -51,6 +57,9 @@ echo -ne "
 sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 # Add sudo rights
 sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+# Copy Config Files
+mkdir ~/.config
+cp -R ~/minimal-arch-install/dotfiles/* ~/.config/
 
 rm -r /root/ArchTitus
 rm -r /home/$USERNAME/ArchTitus
